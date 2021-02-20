@@ -1,8 +1,12 @@
+//@ts-nocheck
 import React from 'react';
 import Header from './components/Header'
 import Watch from './components/Watch'
 import Grid, { GridSpacing } from '@material-ui/core/Grid';
 import Bites from './components/Bites';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
+import Home from './components/Home';
+import Player from './components/Player';
 
 function App() {
   return (
@@ -16,12 +20,18 @@ function App() {
         <Bites />
       </Grid>
       
-      <Grid item sm={3} />
+      {/*<Grid item sm={3} />
       <Grid item xs={12} sm={6}>
         <Watch />
       </Grid>
-      <Grid item sm={3} />
+  <Grid item sm={3} />*/}
     </Grid>
+    <Router>
+      <Switch>
+        <Router exact path='/' components={Home} />
+        <Route path="/player/:id" component={Player}></Route>
+      </Switch>
+    </Router>
     </>
   );
 }
