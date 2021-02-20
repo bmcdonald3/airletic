@@ -5,40 +5,24 @@ const Watch = () => {
     return (
         <Grid container spacing={2}>
             <Grid item xs={12}>
-                <iframe 
-                width='100%' 
-                height="315" 
-                src="https://www.youtube.com/embed/8SZX4wmV1jU" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen />
+                <video controls muted>
+                    <source src="http://localhost:4000/video" type="video/mp4"></source>
+                </video>
             </Grid>
             <Grid item xs={12}>
-                <iframe 
-                width='100%' 
-                height="315" 
-                src="https://www.youtube.com/embed/8SZX4wmV1jU" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen />
+            <video controls muted>
+                    <source src="http://localhost:4000/video" type="video/mp4"></source>
+                </video>
             </Grid>
             <Grid item xs={12}>
-                <iframe 
-                width='100%' 
-                height="315" 
-                src="https://www.youtube.com/embed/8SZX4wmV1jU" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen />
+                <video controls muted>
+                    <source src="http://localhost:4000/video" type="video/mp4"></source>
+                </video>
             </Grid>
             <Grid item xs={12}>
-                <iframe 
-                width='100%' 
-                height="315" 
-                src="https://www.youtube.com/embed/8SZX4wmV1jU" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen />
+                <video controls muted>
+                    <source src="http://localhost:4000/video" type="video/mp4"></source>
+                </video>
             </Grid>
         </Grid>
     );
