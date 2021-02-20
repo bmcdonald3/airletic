@@ -1,4 +1,3 @@
-//@ts-nocheck
 import React from 'react';
 import Header from './components/Header'
 import Watch from './components/Watch'
@@ -28,7 +27,7 @@ function App() {
     </Grid>
     <Router>
       <Switch>
-        <Router exact path='/' components={Home} />
+        <Route exact path='/' component={Home} />
         <Route path="/player/:id" component={Player}></Route>
       </Switch>
     </Router>

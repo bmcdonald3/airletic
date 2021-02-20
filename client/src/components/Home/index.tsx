@@ -1,27 +1,32 @@
 //@ts-nocheck
 import { Grid } from '@material-ui/core';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
     const [videos, setVideos] = useState([]);
 
-    async function componentDidMount() {
-        try {
-            const response = await fetch('http://localhost:4000/videos');
-            const data = await response.json()
-            setVideos([...data])
-        } catch(error) {
-            console.log(error)
-        }
-    }
+    useEffect(() => {
+        async function getVideos() {
+            try {
+                const res = await fetch('http://localhost:4000/videos');
+                const data = await res.json();
+                setVideos([...data])
+            } catch (error) {
+                console.log(':(')
+                console.log(error);
+            }
+        };
+        getVideos();
+    }, []);
 
     return(
         <>
+            <h1>home</h1>
             <Grid container>
                 {videos.map(video => {
                     return(
-                        <Grid item>
+                        <Grid item key={video.id}>
                             <Link to={`/player/${video.id}`}>
                                 <img src={`http://localhost:4000${video.poster}`} alt={video.name} />
                                 <div>
