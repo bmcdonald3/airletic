@@ -18,7 +18,7 @@ const Player = (props: any) => {
     return(
         <>
             <video controls muted autoPlay>
-                <source src={`http://localhost:4000/video/${this.state.videoId}`} type="video/mp4"></source>
+                <source src={`http://localhost:4000/video/${videoId}`} type="video/mp4"></source>
             </video>
             <h1>{ videoData.name }</h1>
         </>
