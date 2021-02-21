@@ -73,7 +73,7 @@ app.get('/video/:id', (req, res) => {
 });
 
 app.get('/video/:id/poster', (req, res) => {
-    res.sendFile(`assets/${req.params.id}.png`, { root: __dirname });
+    res.sendFile(`assets/thumbnails/${req.params.id}.png`, { root: __dirname });
 });
 
 app.listen(4000, () => {

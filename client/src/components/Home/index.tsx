@@ -22,11 +22,12 @@ const Home = () => {
 
     return(
         <>
-            <h1>home</h1>
             <Grid container>
                 {videos.map(video => {
                     return(
-                        <Grid item key={video.id}>
+                        <>
+                        <Grid item sm={3} />
+                        <Grid item key={video.id} sm={6}>
                             <Link to={`/player/${video.id}`}>
                                 <img src={`http://localhost:4000${video.poster}`} alt={video.name} />
                                 <div>
@@ -35,6 +36,8 @@ const Home = () => {
                                 </div>
                             </Link>
                         </Grid>
+                        <Grid item sm={3} />
+                        </>
                     );
                 })}
             </Grid>
