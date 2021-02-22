@@ -9,11 +9,10 @@ const Home = () => {
     useEffect(() => {
         async function getVideos() {
             try {
-                const res = await fetch('http://localhost:4000/videos');
+                const res = await fetch('/videos');
                 const data = await res.json();
                 setVideos([...data])
             } catch (error) {
-                console.log(':(')
                 console.log(error);
             }
         };
@@ -29,7 +28,7 @@ const Home = () => {
                         <Grid item sm={3} />
                         <Grid item sm={6}>
                             <Link to={`/player/${video.id}`}>
-                                <img src={`http://localhost:4000${video.poster}`} alt={video.name} />
+                                <img src={`/${video.poster}`} alt={video.name} />
                                 <div>
                                     <p>{video.name}</p>
                                     <p>{video.duration}</p>
