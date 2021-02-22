@@ -28,7 +28,7 @@ const Home = () => {
                         <Grid item sm={3} />
                         <Grid item sm={6}>
                             <Link to={`/player/${video.id}`}>
-                                <img src={`/${video.poster}`} alt={video.name} />
+                                <img src={`/video${video.poster}`} alt={video.name} />
                                 <div>
                                     <p>{video.name}</p>
                                     <p>{video.duration}</p>
