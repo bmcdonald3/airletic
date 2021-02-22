@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React from 'react';
 import Header from './components/Header'
 import Watch from './components/Watch'
