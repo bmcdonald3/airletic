@@ -5,6 +5,8 @@ const cors = require('cors');
 
 const app = express();
 
+const PORT = process.env.PORT || 4000;
+
 const videos = [
     {
         id: 0,
@@ -76,6 +78,10 @@ app.get('/video/:id/poster', (req, res) => {
     res.sendFile(`assets/thumbnails/${req.params.id}.png`, { root: __dirname });
 });
 
-app.listen(4000, () => {
-    console.log('Listening on port 4000');
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+}
+
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`);
 });
