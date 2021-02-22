@@ -1,6 +1,6 @@
 //@ts-nocheck
 import { Grid } from '@material-ui/core';
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
@@ -25,9 +25,9 @@ const Home = () => {
             <Grid container>
                 {videos.map(video => {
                     return(
-                        <>
+                        <Fragment key={video.id}>
                         <Grid item sm={3} />
-                        <Grid item key={video.id} sm={6}>
+                        <Grid item sm={6}>
                             <Link to={`/player/${video.id}`}>
                                 <img src={`http://localhost:4000${video.poster}`} alt={video.name} />
                                 <div>
@@ -37,7 +37,7 @@ const Home = () => {
                             </Link>
                         </Grid>
                         <Grid item sm={3} />
-                        </>
+                        </Fragment>
                     );
                 })}
             </Grid>
